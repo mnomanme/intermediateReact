@@ -1,11 +1,11 @@
 import MaterialButton from './components/MaterialButton/MaterialButton';
-import News from './components/News/News';
+import NewsState from './components/NewsSate/NewsState';
 
 const App = () => {
 	return (
 		<>
 			<h2>Material UI</h2>
-			<News />
+			<NewsState />
 			<MaterialButton />
 		</>
 	);
