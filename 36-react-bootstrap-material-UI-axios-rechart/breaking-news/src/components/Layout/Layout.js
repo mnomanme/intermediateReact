@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from '../Header/Header';
+import TopHeadline from '../TopHeadline/TopHeadline';
 
 const Layout = () => {
 	return (
-		<div>
-			<h2>Layout</h2>
-		</div>
+		<>
+			<Header />
+			<TopHeadline />
+		</>
 	);
 };
 
