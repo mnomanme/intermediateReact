@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import News from '../News/News';
 
 const TopHeadline = () => {
 	const [articles, setArticles] = useState([]);
@@ -10,7 +11,7 @@ const TopHeadline = () => {
 				const res = await fetch(url);
 				const data = await res.json();
 				setArticles(data.articles);
-				console.log(data.articles);
+				// console.log(data.articles);
 			} catch (error) {
 				console.log(error);
 			}
@@ -21,6 +22,11 @@ const TopHeadline = () => {
 	return (
 		<div>
 			<h2>Top Headline: {articles.length}</h2>
+
+			{articles.map((article, index) => {
+				// console.log(article.title);
+				return <News key={index} article={article}></News>;
+			})}
 		</div>
 	);
 };
