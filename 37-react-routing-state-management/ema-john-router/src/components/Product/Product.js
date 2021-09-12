@@ -3,10 +3,11 @@ import { Button } from 'react-bootstrap';
 import './Product.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Product = (props) => {
 	// console.log(props);
-	const { name, seller, stock, img, price } = props.product;
+	const { name, seller, stock, img, price, key } = props.product;
 	const { handleAddProduct, product } = props;
 
 	return (
@@ -16,7 +17,9 @@ const Product = (props) => {
 			</div>
 
 			<div className="productItem">
-				<h6 className="productName">{name}</h6>
+				<h6 className="productName">
+					<Link to={`/product/` + key}>{name}</Link>
+				</h6>
 				<p>
 					<small>by: {seller}</small>
 				</p>
