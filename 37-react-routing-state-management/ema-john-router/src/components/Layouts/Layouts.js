@@ -5,6 +5,7 @@ import Shop from '../Shop/Shop';
 import Review from '../Review/Review';
 import ManageInventory from '../ManageInventory/ManageInventory';
 import NotFound from '../NotFound/NotFound';
+import ProductDetails from '../ProductDetails/ProductDetails';
 
 const Layouts = () => {
 	return (
@@ -23,6 +24,9 @@ const Layouts = () => {
 					</Route>
 					<Route exact path="/">
 						<Shop />
+					</Route>
+					<Route to="/product/:productKey">
+						<ProductDetails />
 					</Route>
 					<Route path="*">
 						<NotFound />
