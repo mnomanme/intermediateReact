@@ -40,7 +40,7 @@ const Cart = (props) => {
 			<p>Shipping & Handling: {shippingCost} </p>
 			<p>Tax + VAT: {tax} </p>
 			<h5>Order Total: {grandTotal} </h5>
-			<Button variant="outline-warning" size="md">
+			<Button variant="outline-info" size="md">
 				Review your Order
 			</Button>
 		</div>

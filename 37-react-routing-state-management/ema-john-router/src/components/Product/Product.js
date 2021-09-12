@@ -24,7 +24,7 @@ const Product = (props) => {
 				<p>
 					<small>Only {stock} left in stock - Order Soon</small>
 				</p>
-				<Button onClick={() => handleAddProduct(product)} variant="outline-warning" size="md-lg">
+				<Button onClick={() => handleAddProduct(product)} variant="outline-info" size="md-lg">
 					<FontAwesomeIcon icon={faShoppingCart} /> add to cart
 				</Button>
 			</div>
