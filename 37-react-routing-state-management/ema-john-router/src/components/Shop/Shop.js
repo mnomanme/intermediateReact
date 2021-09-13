@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import fakeData from '../../resources/fakeData';
 import { Container } from 'react-bootstrap';
 import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
+import { addToDatabaseCart } from '../../resources/utilities/databaseManager';
 
 const Shop = () => {
 	// console.log(fakeData);
@@ -28,6 +29,10 @@ const ShopData = () => {
 		// console.log('add product', pd);
 		const newCart = [...cart, pd];
 		setCart(newCart);
+
+		const sameItemProducts = newCart.filter((item) => item.key === pd.key);
+		const count = sameItemProducts.length;
+		addToDatabaseCart(pd.key, count);
 	};
 
 	return (
@@ -36,7 +41,11 @@ const ShopData = () => {
 				<h3>Total Product: {products.length}</h3>
 				{products.map((pd) => {
 					const { key } = pd;
-					return <Product key={key} product={pd} handleAddProduct={handleAddProduct} showAddToCart={true} />;
+					return (
+						<Fragment key={key}>
+							<Product product={pd} handleAddProduct={handleAddProduct} showAddToCart={true} />;
+						</Fragment>
+					);
 				})}
 			</section>
 
