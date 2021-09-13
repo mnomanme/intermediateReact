@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = (props) => {
@@ -33,17 +34,19 @@ const Cart = (props) => {
 	};
 
 	return (
-		<div>
+		<>
 			<h4>Order Summary</h4>
 			<h6>Itmes Orderd: {cart.length}</h6>
 			<p>Products Price: {formatNumber(total)} </p>
 			<p>Shipping & Handling: {shippingCost} </p>
 			<p>Tax + VAT: {tax} </p>
 			<h5>Order Total: {grandTotal} </h5>
-			<Button variant="outline-info" size="md">
-				Review your Order
-			</Button>
-		</div>
+			<Link to="/review">
+				<Button variant="outline-info" size="md">
+					Review your Order
+				</Button>
+			</Link>
+		</>
 	);
 };
 
