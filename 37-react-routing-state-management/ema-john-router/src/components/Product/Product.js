@@ -6,9 +6,9 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-	// console.log(props);
+	console.log(props);
 	const { name, seller, stock, img, price, key } = props.product;
-	const { handleAddProduct, product } = props;
+	const { handleAddProduct, product, showAddToCart } = props;
 
 	return (
 		<section className="product">
@@ -27,9 +27,11 @@ const Product = (props) => {
 				<p>
 					<small>Only {stock} left in stock - Order Soon</small>
 				</p>
-				<Button onClick={() => handleAddProduct(product)} variant="outline-info" size="md-lg">
-					<FontAwesomeIcon icon={faShoppingCart} /> add to cart
-				</Button>
+				{showAddToCart && (
+					<Button onClick={() => handleAddProduct(product)} variant="outline-info" size="md-lg">
+						<FontAwesomeIcon icon={faShoppingCart} /> add to cart
+					</Button>
+				)}
 			</div>
 		</section>
 	);
