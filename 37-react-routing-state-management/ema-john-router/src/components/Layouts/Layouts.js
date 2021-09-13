@@ -25,7 +25,7 @@ const Layouts = () => {
 					<Route exact path="/">
 						<Shop />
 					</Route>
-					<Route to="/product/:productKey">
+					<Route path="/product/:productKey">
 						<ProductDetails />
 					</Route>
 					<Route path="*">
