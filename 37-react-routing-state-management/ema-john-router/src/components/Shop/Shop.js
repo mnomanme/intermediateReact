@@ -36,7 +36,7 @@ const ShopData = () => {
 				<h3>Total Product: {products.length}</h3>
 				{products.map((pd) => {
 					const { key } = pd;
-					return <Product key={key} product={pd} handleAddProduct={handleAddProduct} />;
+					return <Product key={key} product={pd} handleAddProduct={handleAddProduct} showAddToCart={true} />;
 				})}
 			</section>
 
