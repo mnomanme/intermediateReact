@@ -1,10 +1,10 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import fakeData from '../../resources/fakeData';
 import { Container } from 'react-bootstrap';
 import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDatabaseCart } from '../../resources/utilities/databaseManager';
+import { addToDatabaseCart, getDatabaseCart } from '../../resources/utilities/databaseManager';
 
 const Shop = () => {
 	// console.log(fakeData);
@@ -25,6 +25,24 @@ const ShopData = () => {
 
 	const [cart, setCart] = useState([]);
 
+	// load produdct data
+	useEffect(() => {
+		const saveCart = getDatabaseCart();
+		const productKeys = Object.keys(saveCart);
+
+		const previousCart = productKeys.map((existingKeys) => {
+			const product = fakeData.find((pd) => {
+				return pd.key === existingKeys;
+			});
+			product.quantity = saveCart[existingKeys];
+			return product;
+		});
+
+		console.log(previousCart);
+		setCart(previousCart);
+	}, []);
+
+	// add product handle
 	const handleAddProduct = (pd) => {
 		// console.log('add product', pd);
 		const productToAdded = pd.key;
