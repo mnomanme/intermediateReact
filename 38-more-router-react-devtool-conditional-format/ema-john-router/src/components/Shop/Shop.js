@@ -27,12 +27,31 @@ const ShopData = () => {
 
 	const handleAddProduct = (pd) => {
 		// console.log('add product', pd);
-		const newCart = [...cart, pd];
-		setCart(newCart);
+		const productToAdded = pd.key;
+		const sameItemProducts = cart.find((item) => item.key === productToAdded);
 
-		const sameItemProducts = newCart.filter((item) => item.key === pd.key);
-		const count = sameItemProducts.length;
+		let count = 1;
+		let newCart;
+
+		if (sameItemProducts) {
+			count = sameItemProducts.quantity + 1;
+			sameItemProducts.quantity = count;
+			const others = cart.filter((pd) => pd.key !== productToAdded);
+			newCart = [...others, sameItemProducts];
+		} else {
+			pd.quantity = 1;
+			newCart = [...cart, pd];
+		}
+		setCart(newCart);
 		addToDatabaseCart(pd.key, count);
+
+		/*products quantity & length*/
+		// const count = sameItemProducts.length;
+		// const newCart = [...cart, pd];
+		// setCart(newCart);
+		// const sameItemProducts = newCart.filter((item) => item.key === pd.key);
+		// const count = sameItemProducts.length;
+		// addToDatabaseCart(pd.key, count);
 	};
 
 	return (
