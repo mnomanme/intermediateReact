@@ -1,10 +1,17 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const FriendsDetail = (props) => {
 	const { name, email, id } = props.friend;
-	console.log(props.friend);
+	// console.log(props.friend);
+
+	const history = useHistory();
+
+	const handleClick = (friendId) => {
+		const url = `/friends/${friendId}`;
+		history.push(url);
+	};
 
 	return (
 		<>
@@ -16,6 +23,9 @@ const FriendsDetail = (props) => {
 				<Link to={`/friends/${id}`}>
 					<Button variant="success">Show Details</Button>
 				</Link>
+				<Button onClick={() => handleClick(id)} className="m-2">
+					Details
+				</Button>
 			</section>
 		</>
 	);
