@@ -22,7 +22,7 @@ const Review = () => {
 
 	// remove product review item
 	const handleRemoveProduct = (productKey) => {
-		console.log('review removed', productKey);
+		// console.log('review removed', productKey);
 		const newCart = reviewCart.filter((pd) => {
 			return pd.key !== productKey;
 		});
