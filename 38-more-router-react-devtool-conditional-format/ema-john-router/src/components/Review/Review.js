@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import fakeData from '../../resources/fakeData';
 import { getDatabaseCart, removeFromDatabaseCart } from '../../resources/utilities/databaseManager';
+import Cart from '../Cart/Cart';
 import ReviewItems from '../ReviewItems/ReviewItems';
 
 const Review = () => {
-	const [cart, setCart] = useState([]);
+	const [reviewCart, setReviewCart] = useState([]);
 
 	const handleRemoveProduct = (productKey) => {
 		console.log('review removed', productKey);
-		const newCart = cart.filter((pd) => {
+		const newCart = reviewCart.filter((pd) => {
 			return pd.key !== productKey;
 		});
-		setCart(newCart);
+		setReviewCart(newCart);
 		removeFromDatabaseCart(productKey);
 	};
 
@@ -27,17 +28,22 @@ const Review = () => {
 
 			return products;
 		});
-		setCart(productsCount);
+		setReviewCart(productsCount);
 		// console.log(productsCount);
 	}, []);
 
 	return (
-		<Container>
-			<h2>Order Items: {cart.length}</h2>
-			{cart.map((pd) => {
-				const { key } = pd;
-				return <ReviewItems key={key} reviewProduct={pd} handleRemoveProduct={handleRemoveProduct} />;
-			})}
+		<Container className="d-flex">
+			<section className="productContainer">
+				<h2>Order Items: {reviewCart.length}</h2>
+				{reviewCart.map((pd) => {
+					const { key } = pd;
+					return <ReviewItems key={key} reviewProduct={pd} handleRemoveProduct={handleRemoveProduct} />;
+				})}
+			</section>
+			<section className="cartContainer">
+				<Cart cart={reviewCart} />
+			</section>
 		</Container>
 	);
 };

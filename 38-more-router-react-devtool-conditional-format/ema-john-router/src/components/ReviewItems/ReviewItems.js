@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 
 const ReviewItems = (props) => {
 	// console.log(props);
-	const { name, img, quantity, key } = props.reviewProduct;
+	const { name, img, quantity, key, price } = props.reviewProduct;
 	const handleRemoveProduct = props.handleRemoveProduct;
 
 	return (
@@ -17,7 +17,10 @@ const ReviewItems = (props) => {
 			<div className="reviewItem">
 				<h6 className="reviewName">{name}</h6>
 				<p>Quantity: {quantity}</p>
-				<Button onClick={() => handleRemoveProduct(key)} variant="outline-info" size="md-lg">
+				<p>
+					<small>${price}</small>
+				</p>
+				<Button onClick={() => handleRemoveProduct(key)} variant="outline-warning" size="md-lg">
 					<FontAwesomeIcon icon={faDoorClosed} /> Remove
 				</Button>
 			</div>
