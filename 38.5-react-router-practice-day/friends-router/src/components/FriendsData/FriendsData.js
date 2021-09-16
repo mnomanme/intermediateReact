@@ -19,8 +19,8 @@ const FriendsData = () => {
 	}, []);
 
 	return (
-		<div>
-			<h2>Friends: {friend.length}</h2>
+		<>
+			<h2 className="text-center fw-bold text-danger">Friends: {friend.length}</h2>
 			{friend.map((friend) => {
 				const { id } = friend;
 				return (
@@ -29,7 +29,7 @@ const FriendsData = () => {
 					</Fragment>
 				);
 			})}
-		</div>
+		</>
 	);
 };
 
