@@ -3,9 +3,9 @@ import notFound from '../../resources/images/404.jpg';
 
 const NotFound = () => {
 	return (
-		<div>
-			<img src={notFound} alt="" style={{ width: '100%' }} />
-		</div>
+		<>
+			<img src={notFound} alt="NOT FOUND" style={{ width: '100%' }} />
+		</>
 	);
 };
 
