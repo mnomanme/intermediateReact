@@ -1,8 +1,15 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FriendsData from './components/FriendsData/FriendsData';
+
 function App() {
 	return (
-		<div>
-			<h2>Friends</h2>
-		</div>
+		<Router>
+			<Switch>
+				<Route>
+					<FriendsData></FriendsData>
+				</Route>
+			</Switch>
+		</Router>
 	);
 }
 
