@@ -5,6 +5,8 @@ import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../resources/utilities/databaseManager';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
 	// console.log(fakeData);
@@ -87,7 +89,13 @@ const ShopData = () => {
 			</section>
 
 			<section className="cartContainer">
-				<Cart cart={cart} />
+				<Cart cart={cart}>
+					<Link to="/review">
+						<Button variant="outline-info" size="md">
+							Review your Order
+						</Button>
+					</Link>
+				</Cart>
 			</section>
 		</div>
 	);
