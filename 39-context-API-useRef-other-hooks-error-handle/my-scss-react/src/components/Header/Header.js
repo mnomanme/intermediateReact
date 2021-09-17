@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { categoryContext } from '../../App';
 
-const Header = (props) => {
-	const { count, setCount } = props;
+const Header = (pops) => {
+	const [category, setCategory] = useContext(categoryContext);
 	return (
 		<>
-			<h1>This is Header :{count}</h1>
-			<button onClick={() => setCount(count + 1)}>Increament</button>
+			<h1>This is Header :{category}</h1>
+			<button onClick={() => setCategory(category + 1)}>Increament</button>
 		</>
 	);
 };
