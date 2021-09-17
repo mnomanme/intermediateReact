@@ -9,9 +9,9 @@ function App() {
 
 	return (
 		<>
-			<h2>Hello React</h2>
-			<Home count={count} setCount={setCount}></Home>
+			<h2>Hello React Count : {count}</h2>
 			<Header count={count} setCount={setCount}></Header>
+			<Home count={count} setCount={setCount}></Home>
 			<Shipment count={count} setCount={setCount}></Shipment>
 		</>
 	);

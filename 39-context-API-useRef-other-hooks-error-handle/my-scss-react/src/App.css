@@ -8,4 +8,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
+	font-size: larger;
+	margin: 20px;
+	padding: 20px;
 }
