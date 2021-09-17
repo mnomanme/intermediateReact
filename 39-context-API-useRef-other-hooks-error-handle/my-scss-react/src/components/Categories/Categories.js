@@ -22,7 +22,7 @@ const Categories = (props) => {
 	const [product, setProduct] = useState([]);
 
 	useEffect(() => {
-		console.log(category);
+		// console.log(category);
 		const matchedProducts = prodcuts.filter((pd) => pd.category === category);
 		setProduct(matchedProducts);
 	}, [category]);
