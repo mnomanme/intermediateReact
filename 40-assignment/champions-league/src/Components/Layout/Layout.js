@@ -1,29 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from '../Home/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NotMatch from '../NotMatch/NotMatch';
+import TeamDetails from '../TeamDetails/TeamDetails';
 
 const Layout = () => {
 	return (
-		<Router>
-			<Link to="/">Home</Link>
+		<>
+			<Router>
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route path="/home">
+						<Home />
+					</Route>
 
-			<Link to="/about">About</Link>
-
-			<Link to="/users">Users</Link>
-
-			<Switch>
-				<Route exact="/home">
-					<Home />
-				</Route>
-				<Route path="/">
-					<Home />
-				</Route>
-				<Route path="*">
-					<NotMatch />
-				</Route>
-			</Switch>
-		</Router>
+					<Route exact path="/tDetails/:strTeam">
+						<TeamDetails />
+					</Route>
+					<Route path="*">
+						<NotMatch />
+					</Route>
+				</Switch>
+			</Router>
+		</>
 	);
 };
 
