@@ -1,9 +1,10 @@
 import React from 'react';
+import notFound from '../../resources/images/404.jpg';
 
 const NotMatch = () => {
 	return (
 		<>
-			<h2>This is NOT Match</h2>
+			<img src={notFound} alt="" style={{ width: '100%' }} />
 		</>
 	);
 };
