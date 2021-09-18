@@ -23,7 +23,7 @@ const Shop = () => {
 const ShopData = () => {
 	const firstTen = fakeData.slice(50, 55);
 	// console.log(firstTen);
-	const [products, setProducts] = useState(firstTen);
+	const [products] = useState(firstTen);
 
 	const [cart, setCart] = useState([]);
 
