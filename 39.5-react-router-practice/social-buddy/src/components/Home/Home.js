@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Post from '../../Post/Post';
+import Post from '../Post/Post';
 
 const Home = () => {
 	const [post, setPost] = useState([]);
