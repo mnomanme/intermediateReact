@@ -24,7 +24,8 @@ const TeamDetails = () => {
 		fetchData();
 	}, [strTeam]);
 
-	const { strTeamBanner, intFormedYear, strCountry, strSport, strGender } = team;
+	const { strTeamBanner, intFormedYear, strCountry, strGender, strTeamBadge } = team;
+
 	const headerStyle = {
 		opacity: '0.8',
 		backgroundImage: `url(${strTeamBanner})`,
@@ -35,7 +36,7 @@ const TeamDetails = () => {
 	return (
 		<>
 			<div className="teamDetailHeader" style={headerStyle}>
-				<img className="teamDetailHeaderLogo" src={team.strTeamBadge} alt="" />
+				<img className="teamDetailHeaderLogo" src={strTeamBadge} alt="" />
 			</div>
 			<div className="team-detail-div">
 				<Row className="team-detail-row">

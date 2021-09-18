@@ -18,7 +18,6 @@ const Teams = () => {
 
 	return (
 		<>
-			<h4>This is Team</h4>
 			<Container>
 				<Row>
 					{teams.map((team) => (
