@@ -1,9 +1,11 @@
 import './App.css';
+import Layout from './Components/Layout/Layout';
 
 const App = () => {
 	return (
 		<>
-			<h1>This is Champions League</h1>
+			<h2>Hello React</h2>
+			<Layout />
 		</>
 	);
 };
