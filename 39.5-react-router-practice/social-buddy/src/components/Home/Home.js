@@ -26,7 +26,8 @@ const Home = () => {
 		<>
 			<h2>This is Home</h2>
 			{post.map((user) => {
-				return <Post post={user}></Post>;
+				const { cell } = user;
+				return <Post key={cell} post={user}></Post>;
 			})}
 		</>
 	);

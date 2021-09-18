@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './components/About/About';
 import Home from './components/Home/Home';
 import { Button, Container } from 'react-bootstrap';
+import PostDetail from './components/PostDetail/PostDetail';
 function App() {
 	return (
 		<Container>
@@ -26,7 +27,9 @@ function App() {
 					<Route path="/about">
 						<About />
 					</Route>
-					<Route path="/dashboard"></Route>
+					<Route path="/postDetails/:id">
+						<PostDetail />
+					</Route>
 				</Switch>
 			</Router>
 		</Container>

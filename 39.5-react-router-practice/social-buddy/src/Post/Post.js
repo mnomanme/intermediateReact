@@ -1,17 +1,25 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import './Post.css';
 
 const Post = (props) => {
 	console.log(props.post);
-	const { gender, email } = props.post;
+	const { gender, email, nat } = props.post;
 	const { title, first, last } = props.post.name;
-	const { medium } = props.post.picture;
+	const { large } = props.post.picture;
 	const { age, date } = props.post.dob;
 
+	const history = useHistory();
+
+	const showComments = (id) => {
+		const url = `postDetails/${id}`;
+		history.push(url);
+	};
+
 	return (
-		<Card bg="outline-warning" style={{ width: '18rem' }}>
-			<Card.Img variant="top" src={medium} />
+		<Card style={{ width: '18rem' }}>
+			<Card.Img variant="top" src={large} />
 			<Card.Body>
 				<Card.Title>
 					{title} {first} {last}
@@ -21,7 +29,9 @@ const Post = (props) => {
 				<Card.Text>
 					Age: {age} <br /> Date of Birth: {date.slice(0, 10)}
 				</Card.Text>
-				<Button variant="primary">Go somewhere</Button>
+				<Button onClick={() => showComments(nat)} variant="outline-primary">
+					Go somewhere
+				</Button>
 			</Card.Body>
 		</Card>
 	);
