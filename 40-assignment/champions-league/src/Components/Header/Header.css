@@ -1,0 +1,13 @@
+.Header {
+	background-image: url('../../resources/images/banner.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	height: 400px;
+	padding-top: 120px;
+}
+
+h2 {
+	font-size: xx-large;
+}
