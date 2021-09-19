@@ -1,3 +1,25 @@
+### Champions League now Live [Champions League](https://football-champions-league.firebaseapp.com/)
+
+## API using [Team](https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4490) [Team Details](https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=arsenal)
+
+#### Background Cover Add
+
+#### Load Dynamic Team Card
+
+#### Show Team Name, Badge, Country, Sport types in cards
+
+#### Load Dynamic Team Details
+
+#### Show Team Banner, Gender, Year, Country Badge, Details in descrition
+
+#### Routing is done & find different paths
+
+#### Button event handler add it works dynamically
+
+#### This is responsive site using React-Bootstrap, Material UI, CSS, React-Router, Font-Awesome
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
