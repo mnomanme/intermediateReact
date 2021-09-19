@@ -6,6 +6,12 @@
 .Card {
 	padding: 20px;
 }
+
+.Card:hover {
+	cursor: pointer;
+	background-color: #fff8e5;
+}
+
 .Logo {
 	height: 100px;
 	width: 100px;
