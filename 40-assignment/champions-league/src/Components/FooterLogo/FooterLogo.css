@@ -1,0 +1,14 @@
+.logoDiv {
+	text-align: center;
+}
+
+.logoDiv {
+	padding: 20px;
+}
+
+.fbLogo,
+.ytLogo,
+.ttbLogo,
+.instaLogo {
+	margin: 10px;
+}
