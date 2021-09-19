@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import AllTeams from '../AllTeams/AllTeams';
+import './Teams.css';
 
 const Teams = () => {
 	const [teams, setTeams] = useState([]);
@@ -17,7 +18,7 @@ const Teams = () => {
 	}, []);
 
 	return (
-		<>
+		<section className="Container">
 			<Container>
 				<Row>
 					{teams.map((team) => (
@@ -25,7 +26,7 @@ const Teams = () => {
 					))}
 				</Row>
 			</Container>
-		</>
+		</section>
 	);
 };
 
