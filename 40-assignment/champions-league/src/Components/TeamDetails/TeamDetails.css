@@ -47,3 +47,13 @@
 	border-radius: 20px;
 	padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+	.team-detail-div {
+		padding: 10px 40px;
+	}
+	.team-image-col img {
+		width: 280px;
+		height: 200px;
+	}
+}

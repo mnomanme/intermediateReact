@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row } from 'react-bootstrap';
 import { faFlag, faFutbol, faLandmark, faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 import './TeamDetails.css';
+import TeamDescription from '../TeamDescription/TeamDescription';
 
 const TeamDetails = () => {
 	const { strTeam } = useParams();
@@ -67,6 +68,7 @@ const TeamDetails = () => {
 						{strGender === 'Male' ? <img src={malePhoto} alt="Male-Team" /> : <img src={femalePhoto} alt="Female-Team" />}
 					</Col>
 				</Row>
+				<TeamDescription team={team} />
 			</div>
 		</>
 	);

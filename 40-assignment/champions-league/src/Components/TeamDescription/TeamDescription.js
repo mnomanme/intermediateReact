@@ -1,10 +1,19 @@
 import React from 'react';
+import './TeamDescription.css';
 
-const TeamDescription = () => {
+const TeamDescription = (props) => {
+	console.log(props.team);
+	const { strDescriptionEN, strStadiumDescription } = props.team;
+
 	return (
-		<>
-			<h4>This is Team Description</h4>
-		</>
+		<div className="description ">
+			<p>
+				<strong>Team Description English: </strong> {strDescriptionEN}{' '}
+			</p>
+			<p>
+				<strong>Stadium Description: </strong> {strStadiumDescription}{' '}
+			</p>
+		</div>
 	);
 };
 
