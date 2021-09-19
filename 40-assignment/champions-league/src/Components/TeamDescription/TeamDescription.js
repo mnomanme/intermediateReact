@@ -6,14 +6,14 @@ const TeamDescription = (props) => {
 	const { strDescriptionEN, strStadiumDescription } = props.team;
 
 	return (
-		<div className="description ">
+		<section className="description ">
 			<p>
 				<strong>Team Description English: </strong> {strDescriptionEN}{' '}
 			</p>
 			<p>
 				<strong>Stadium Description: </strong> {strStadiumDescription}{' '}
 			</p>
-		</div>
+		</section>
 	);
 };
 
