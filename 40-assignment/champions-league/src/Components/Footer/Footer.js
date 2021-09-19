@@ -1,9 +1,12 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
 	return (
 		<>
-			<h4>This is Footer</h4>
+			<p className="footer">
+				&copy; Mohammad Noman || All rights reserved <small> {new Date().getFullYear()} </small>
+			</p>
 		</>
 	);
 };
