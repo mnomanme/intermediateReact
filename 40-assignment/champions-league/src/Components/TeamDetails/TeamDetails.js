@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Col, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFlag, faFutbol, faLandmark, faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 import malePhoto from '../../resources/images/male.png';
 import femalePhoto from '../../resources/images/female.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col, Row } from 'react-bootstrap';
-import { faFlag, faFutbol, faLandmark, faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
-import './TeamDetails.css';
 import TeamDescription from '../TeamDescription/TeamDescription';
+import FooterLogo from '../FooterLogo/FooterLogo';
+import './TeamDetails.css';
+import Footer from '../Footer/Footer';
 
 const TeamDetails = () => {
 	const { strTeam } = useParams();
@@ -16,10 +18,9 @@ const TeamDetails = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const url = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${strTeam}`;
-
 			const res = await fetch(url);
 			const data = await res.json();
-			console.log(data.teams[0]);
+			// console.log(data.teams[0]);
 			setTeam(data.teams[0]);
 		};
 		fetchData();
@@ -36,10 +37,10 @@ const TeamDetails = () => {
 
 	return (
 		<>
-			<div className="teamDetailHeader" style={headerStyle}>
+			<section className="teamDetailHeader" style={headerStyle}>
 				<img className="teamDetailHeaderLogo" src={strTeamBadge} alt="" />
-			</div>
-			<div className="team-detail-div">
+			</section>
+			<section className="team-detail-div">
 				<Row className="team-detail-row">
 					<Col className="team-detail" sm={6}>
 						<h1>
@@ -69,7 +70,9 @@ const TeamDetails = () => {
 					</Col>
 				</Row>
 				<TeamDescription team={team} />
-			</div>
+				<FooterLogo icon={team} />
+				<Footer />
+			</section>
 		</>
 	);
 };
