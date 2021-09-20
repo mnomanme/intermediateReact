@@ -1,6 +1,7 @@
 import './App.css';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { useEffect, useState } from 'react';
+import MealDetail from './component/MealDetail/MealDetail';
 
 function App() {
 	const [likeColor, setLikeColor] = useState('');
@@ -44,6 +45,8 @@ function App() {
 	return (
 		<div className="App">
 			<h2>Hello React </h2>
+
+			<MealDetail />
 
 			<ThumbUpIcon onClick={handleLike} fontSize="large" color={likeColor}></ThumbUpIcon>
 
