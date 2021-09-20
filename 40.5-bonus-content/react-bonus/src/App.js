@@ -27,9 +27,13 @@ function App() {
 			console.log(error);
 		}
 		// single user
-		fetch(`https://jsonplaceholder.typicode.com/users/1`)
-			.then((res) => res.json())
-			.then((data) => setSingleUser(data));
+		const fetchData = async () => {
+			const url = `https://jsonplaceholder.typicode.com/users/1`;
+			const res = await fetch(url);
+			const data = await res.json();
+			setSingleUser(data);
+		};
+		fetchData();
 		// random user
 		fetch(`https://randomuser.me/api/`)
 			.then((res) => res.json())
