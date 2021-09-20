@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Row } from 'react-bootstrap';
 import Post from '../Post/Post';
 
 const Home = () => {
@@ -25,10 +26,13 @@ const Home = () => {
 	return (
 		<>
 			<h2>This is Home</h2>
-			{post.map((user) => {
-				const { cell } = user;
-				return <Post key={cell} post={user}></Post>;
-			})}
+
+			<Row>
+				{post.map((user) => {
+					const { cell } = user;
+					return <Post key={cell} post={user}></Post>;
+				})}
+			</Row>
 		</>
 	);
 };

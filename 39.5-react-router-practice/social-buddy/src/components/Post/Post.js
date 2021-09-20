@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import './Post.css';
 
@@ -18,22 +18,24 @@ const Post = (props) => {
 	};
 
 	return (
-		<Card style={{ width: '18rem' }}>
-			<Card.Img variant="top" src={large} />
-			<Card.Body>
-				<Card.Title>
-					{title} {first} {last}
-				</Card.Title>
-				<Card.Text>Email: {email}</Card.Text>
-				<Card.Text>Gender: {gender}</Card.Text>
-				<Card.Text>
-					Age: {age} <br /> Date of Birth: {date.slice(0, 10)}
-				</Card.Text>
-				<Button onClick={() => showComments(nat)} variant="outline-primary">
-					Go somewhere
-				</Button>
-			</Card.Body>
-		</Card>
+		<Col lg={4} md={6} xs={12}>
+			<Card style={{ width: '15rem' }}>
+				<Card.Img variant="top" src={large} />
+				<Card.Body>
+					<Card.Title>
+						{title} {first} {last}
+					</Card.Title>
+					<Card.Text>Email: {email}</Card.Text>
+					<Card.Text>Gender: {gender}</Card.Text>
+					<Card.Text>
+						Age: {age} <br /> Date of Birth: {date.slice(0, 10)}
+					</Card.Text>
+					<Button onClick={() => showComments(nat)} variant="outline-primary">
+						Go somewhere
+					</Button>
+				</Card.Body>
+			</Card>
+		</Col>
 	);
 };
 
